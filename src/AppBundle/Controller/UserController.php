@@ -31,7 +31,7 @@ class UserController extends Controller
     /**
      * Выводим форму редактирования профиля
      *
-     * @Route("/edit-profile", name="edit-profile")
+     * @Route("/profile/edit", name="edit-profile")
      */
     public function editAction(Request $request)
     {

@@ -15,7 +15,7 @@ class BidController extends Controller
     /**
      * Выводим список заявок пользователя
      *
-     * @Route("/panel", name="index-bid")
+     * @Route("/tasks", name="index-bid")
      */
     public function indexPanelAction(Request $request)
     {
@@ -31,7 +31,7 @@ class BidController extends Controller
     /**
      * Выводим форму создания заявки
      *
-     * @Route("/create-bid", name="create-bid")
+     * @Route("/tasks/create", name="create-bid")
      */
     public function createBidAction(Request $request)
     {
@@ -75,7 +75,7 @@ class BidController extends Controller
     /**
      * Удаляем заявку пользователя по её id
      *
-     * @Route("/delete-bid/{id}", name="delete-bid")
+     * @Route("/tasks/delete/{id}", name="delete-bid")
      */
     public function deleteAction($id, Request $request)
     {
@@ -93,7 +93,7 @@ class BidController extends Controller
     /**
      * Выводим форму редактирования заявки по её id
      *
-     * @Route("/edit-bid/{id}", name="edit-bid")
+     * @Route("/tasks/edit/{id}", name="edit-bid")
      */
     public function editAction($id, Request $request)
     {
@@ -125,7 +125,7 @@ class BidController extends Controller
     /**
      * Выводим форму редактирования заявки по её id
      *
-     * @Route("/toggle-bid/{id}", name="toggle-bid")
+     * @Route("/tasks/toggle/{id}", name="toggle-bid")
      */
     public function toggleAction($id, Request $request)
     {
