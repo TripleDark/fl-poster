@@ -26,6 +26,16 @@ class User extends BaseUser
     private $bids;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    protected $freelancehuntId;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    protected $freelancehuntSecret;
+
+    /**
      * Add bid
      *
      * @param \AppBundle\Entity\Bid $bid
@@ -57,5 +67,53 @@ class User extends BaseUser
     public function getBids()
     {
         return $this->bids;
+    }
+
+    /**
+     * Set freelancehuntId
+     *
+     * @param string $freelancehuntId
+     *
+     * @return User
+     */
+    public function setFreelancehuntId($freelancehuntId)
+    {
+        $this->freelancehuntId = $freelancehuntId;
+
+        return $this;
+    }
+
+    /**
+     * Get freelancehuntId
+     *
+     * @return string
+     */
+    public function getFreelancehuntId()
+    {
+        return $this->freelancehuntId;
+    }
+
+    /**
+     * Set freelancehuntSecret
+     *
+     * @param string $freelancehuntSecret
+     *
+     * @return User
+     */
+    public function setFreelancehuntSecret($freelancehuntSecret)
+    {
+        $this->freelancehuntSecret = $freelancehuntSecret;
+
+        return $this;
+    }
+
+    /**
+     * Get freelancehuntSecret
+     *
+     * @return string
+     */
+    public function getFreelancehuntSecret()
+    {
+        return $this->freelancehuntSecret;
     }
 }
