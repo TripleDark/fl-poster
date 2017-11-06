@@ -64,9 +64,7 @@ class BidController extends Controller
             $bids = $repository->findAll();
 
             // Направляем пользователя на страницу со списком заданий
-            return $this->redirectToRoute('index-bid', array(
-                'bids' => $bids
-            ));
+            return $this->redirectToRoute('index-bid');
         }
 
         return $this->render('bid/create.html.twig', array(
@@ -85,16 +83,11 @@ class BidController extends Controller
             ->getRepository('AppBundle:Bid')
             ->find($id);
 
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Bid');
-        $bids = $repository->findAll();
-
         $em = $this->getDoctrine()->getManager();
         $em->remove($bid);
         $em->flush();
 
-        return $this->redirectToRoute('index-bid', array(
-            'bids' => $bids
-        ));
+        return $this->redirectToRoute('index-bid');
     }
 
     /**
@@ -119,11 +112,7 @@ class BidController extends Controller
             $em->persist($bid);
             $em->flush();
 
-            $bids = $bidRepository->findAll();
-
-            return $this->redirectToRoute('index-bid', array(
-                'bids' => $bids
-            ));
+            return $this->redirectToRoute('index-bid');
         }
 
         return $this->render('bid/create.html.twig', array(
@@ -150,11 +139,7 @@ class BidController extends Controller
         $em->persist($bid);
         $em->flush();
 
-        $bids = $bidRepository->findAll();
-
-        return $this->redirectToRoute('index-bid', array(
-            'bids' => $bids
-        ));
+        return $this->redirectToRoute('index-bid');
     }
 
 }
