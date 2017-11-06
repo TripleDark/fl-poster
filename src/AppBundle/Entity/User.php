@@ -35,6 +35,20 @@ class User extends BaseUser
      */
     protected $freelancehuntSecret;
 
+
+    /**
+     * Many Users have One Plan.
+     * @ORM\ManyToOne(targetEntity="Plan", inversedBy="users")
+     * @ORM\JoinColumn(name="plan_id", referencedColumnName="id")
+     */
+    private $plan;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    protected $planActivatedAt;
+
+
     /**
      * Add bid
      *
