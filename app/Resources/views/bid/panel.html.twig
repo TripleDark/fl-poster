@@ -21,9 +21,10 @@
                             <th scope="col">#</th>
                             <th scope="col">Площадка</th>
                             <th scope="col">Название</th>
-                            <th scope="col">Эффективность</th>
                             <th scope="col">Статус</th>
                             <th scope="col">Создатель</th>
+                            <th scope="col">Создана</th>
+                            <th scope="col">Редактировалась</th>
                             <th scope="col">Действия</th>
                         </tr>
                         </thead>
@@ -33,9 +34,10 @@
                                 <th scope="col">{{ key + 1 }}</th>
                                 <td scope="col">{{ bid.platform }}</td>
                                 <td scope="col">{{ bid.title }}</td>
-                                <td scope="col">test</td>
                                 <td scope="col">{{ bid.status }}</td>
                                 <td scope="col">{{ bid.user }}</td>
+                                <td scope="col">{{ bid.createdAt|date("m/d/Y") }}</td>
+                                <td scope="col">{{ bid.editedAt|date("m/d/Y") }}</td>
                                 <td scope="col">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                         <a role="button" href="/edit-bid/{{ bid.id }}"
