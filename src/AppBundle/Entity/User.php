@@ -130,4 +130,52 @@ class User extends BaseUser
     {
         return $this->freelancehuntSecret;
     }
+
+    /**
+     * Set planActivatedAt
+     *
+     * @param \DateTime $planActivatedAt
+     *
+     * @return User
+     */
+    public function setPlanActivatedAt($planActivatedAt)
+    {
+        $this->planActivatedAt = $planActivatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get planActivatedAt
+     *
+     * @return \DateTime
+     */
+    public function getPlanActivatedAt()
+    {
+        return $this->planActivatedAt;
+    }
+
+    /**
+     * Set plan
+     *
+     * @param \AppBundle\Entity\Plan $plan
+     *
+     * @return User
+     */
+    public function setPlan(\AppBundle\Entity\Plan $plan = null)
+    {
+        $this->plan = $plan;
+
+        return $this;
+    }
+
+    /**
+     * Get plan
+     *
+     * @return \AppBundle\Entity\Plan
+     */
+    public function getPlan()
+    {
+        return $this->plan;
+    }
 }
