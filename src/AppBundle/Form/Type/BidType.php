@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -25,7 +26,7 @@ class BidType extends AbstractType
                     'required' => true,
                 ],
             ])
-            ->add('text', TextType::class, [
+            ->add('text', TextareaType::class, [
                 'label' => 'Содержание',
                 'attr' => [
                     'maxlength' => '100',
