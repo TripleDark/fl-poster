@@ -22,9 +22,6 @@ class BidController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:Bid');
         $bids = $repository->findAll();
 
-//        var_dump($bids);
-//        die();
-
         return $this->render('bid/panel.html.twig', [
             'bids' => $bids
         ]);
