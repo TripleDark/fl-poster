@@ -15,11 +15,6 @@ body{
  * Base structure
  */
 
-/* Move down content because we have a fixed navbar that is 3.5rem tall */
-body {
-    padding-top: 3.5rem;
-}
-
 /*
  * Typography
  */
@@ -36,7 +31,7 @@ h1 {
 
 .sidebar {
     position: fixed;
-    top: 51px;
+    top: 0;
     bottom: 0;
     left: 0;
     z-index: 1000;

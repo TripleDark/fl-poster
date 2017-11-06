@@ -1,43 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'panel-base.html.twig' %}
 
 {% block body %}
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Dashboard</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                    data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Задачи<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Настройки</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Контакты</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav mr-right">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Выход</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-
     <div class="b-main">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <div class="float-left" style="padding: 5px 0;">
+                        <h2>Список задач</h2>
+                    </div>
                     <div class="float-right" style="padding: 5px 0;">
-                        <a href="/create-bid" type="button" class="btn btn-primary">Добавить задачу</a>
+                        <a href="/create-bid" role="button" class="btn btn-primary">Добавить задачу</a>
                     </div>
                 </div>
             </div>
@@ -66,10 +38,10 @@
                                 <td scope="col">{{ bid.user }}</td>
                                 <td scope="col">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                        <a type="button" href="/edit-bid/{{ bid.id }}"
+                                        <a role="button" href="/edit-bid/{{ bid.id }}"
                                            class="btn btn-secondary btn-warning">Настроить</a>
-                                        <a type="button" href="/toggle-bid/{{ bid.id }}" class="btn btn-secondary">Остановить</a>
-                                        <a type="button" href="/delete-bid/{{ bid.id }}"
+                                        <a role="button" href="/toggle-bid/{{ bid.id }}" class="btn btn-secondary">Остановить</a>
+                                        <a role="button" href="/delete-bid/{{ bid.id }}"
                                            class="btn btn-secondary btn-danger">Удалить</a>
                                     </div>
                                 </td>
