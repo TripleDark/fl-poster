@@ -1,0 +1,27 @@
+{% extends 'panel-base.html.twig' %}
+
+{% block body %}
+    <div class="b-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="float-left">
+                        <h2>Мой профиль</h2>
+                    </div>
+                    <div class="float-right">
+                        <a href="/edit-profile" role="button" class="btn btn-primary">Редактировать</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <b>Freelancehunt Id:</b> {{ user.freelancehuntId }}
+                    <br>
+                    <b>Freelancehunt Secret:</b> {{ user.freelancehuntSecret }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
