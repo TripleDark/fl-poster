@@ -60,6 +60,16 @@ class Bid
     protected $categoryIds;
 
     /**
+     * @ORM\Column(type="datetime", nullable=false)
+     */
+    protected $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=false)
+     */
+    protected $editedAt;
+
+    /**
      * Get id
      *
      * @return integer
@@ -259,5 +269,53 @@ class Bid
     public function getPlatform()
     {
         return $this->platform;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Bid
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set editedAt
+     *
+     * @param \DateTime $editedAt
+     *
+     * @return Bid
+     */
+    public function setEditedAt($editedAt)
+    {
+        $this->editedAt = $editedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get editedAt
+     *
+     * @return \DateTime
+     */
+    public function getEditedAt()
+    {
+        return $this->editedAt;
     }
 }

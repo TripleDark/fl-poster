@@ -52,6 +52,11 @@ class BidController extends Controller
                 ->getUser();
             $bid->setUser($creator);
 
+            // Фиксируем дату создания и редактирования задания
+            // TODO: Эту логику можно вынести в модель
+            $bid->setCreatedAt(new \DateTime());
+            $bid->setEditedAt(new \DateTime());
+
             // Записываем новое задание в базу данных
             $em = $this->getDoctrine()->getManager();
             $em->persist($bid);
@@ -109,6 +114,9 @@ class BidController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // Фиксируем дату редактирования задачи
+            $bid->setEditedAt(new \DateTime());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($bid);
